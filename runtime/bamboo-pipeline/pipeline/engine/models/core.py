@@ -19,7 +19,9 @@ import ujson as json
 from celery import current_app
 
 try:
-    from celery.task.control import revoke
+    from celery.app.control import Control
+
+    revoke = Control().revoke
 except ModuleNotFoundError:
     revoke = current_app.control.revoke
 
