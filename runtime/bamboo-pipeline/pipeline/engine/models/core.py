@@ -17,14 +17,6 @@ import traceback
 
 import ujson as json
 from celery import current_app
-
-try:
-    from celery.app.control import Control
-
-    revoke = Control().revoke
-except ModuleNotFoundError:
-    revoke = current_app.control.revoke
-
 from django.db import models, transaction
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
@@ -44,6 +36,7 @@ logger = logging.getLogger("celery")
 
 RERUN_MAX_LIMIT = pipeline_settings.PIPELINE_RERUN_MAX_TIMES
 NAME_MAX_LENGTH = 64
+revoke = current_app.control.revoke
 
 
 class ProcessSnapshotManager(models.Manager):
