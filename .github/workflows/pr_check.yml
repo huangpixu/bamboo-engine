@@ -2,7 +2,7 @@ name: PR check
 
 on:
   pull_request:
-    branches: [master, develop]
+    branches: [master, develop, python_upgrade_master]
 
 jobs:
   engine-lint:
