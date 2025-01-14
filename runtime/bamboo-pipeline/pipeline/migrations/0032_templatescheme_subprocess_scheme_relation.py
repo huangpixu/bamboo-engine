@@ -13,6 +13,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="templatescheme",
             name="subprocess_scheme_relation",
-            field=models.ManyToManyField(to="pipeline.TemplateRelationship", verbose_name="子流程节点引用执行方案的关系"),
+            field=models.ManyToManyField(
+                to="pipeline.TemplateRelationship", verbose_name="子流程节点引用执行方案的关系"
+            ),
         ),
     ]

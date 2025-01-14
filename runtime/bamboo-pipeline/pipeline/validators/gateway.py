@@ -147,7 +147,9 @@ def match_converge(
                     target[i] = None
                     break
                 else:
-                    raise exceptions.ConvergeMatchError(cur_index, _("并行网关中的分支网关必须将所有分支汇聚到一个汇聚网关"))
+                    raise exceptions.ConvergeMatchError(
+                        cur_index, _("并行网关中的分支网关必须将所有分支汇聚到一个汇聚网关")
+                    )
 
             converge_id, shared = match_converge(
                 converges=converges,
@@ -205,7 +207,9 @@ def match_converge(
             if not_in_parallel_gateway(stack):
                 converge_end = True
             else:
-                raise exceptions.ConvergeMatchError(cur_index, _("并行网关中的分支网关必须将所有分支汇聚到一个汇聚网关"))
+                raise exceptions.ConvergeMatchError(
+                    cur_index, _("并行网关中的分支网关必须将所有分支汇聚到一个汇聚网关")
+                )
 
         # exclusive gateway point back to self
         elif is_exg and target[i] == current_gateway[PE.id]:

@@ -38,7 +38,9 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name="process",
             name="suspended_by",
-            field=models.CharField(blank=True, db_index=True, default="", max_length=33, verbose_name="导致进程暂停的节点 ID"),
+            field=models.CharField(
+                blank=True, db_index=True, default="", max_length=33, verbose_name="导致进程暂停的节点 ID"
+            ),
         ),
         migrations.AlterField(
             model_name="state",
