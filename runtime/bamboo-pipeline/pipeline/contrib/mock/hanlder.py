@@ -67,8 +67,8 @@ class MockHandler:
 
         if node_state.name != states.FAILED:
             raise UpdatePipelineContextException(
-                "update context values failed: the task of non-failed state is not allowed to update, node_id={} \
-                  ".format(
+                "update context values failed: \
+                  the task of non-failed state is not allowed to update, node_id={}".format(
                     self.node_id
                 )
             )

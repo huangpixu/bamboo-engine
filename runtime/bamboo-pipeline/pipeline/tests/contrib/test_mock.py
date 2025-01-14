@@ -57,10 +57,9 @@ class TestMockNodeOutPutDataBase(TestCase):
         pipeline_state.name = states.RUNNING
         pipeline_state.save()
 
-        message = (
-            "update context values failed: the task of non-failed state is not allowed to update, node_id={}".format(
-                node_id
-            )
+        message = "update context values failed: \
+              the task of non-failed state is not allowed to update, node_id={}".format(
+            node_id
         )
         self.assert_exception(pipeline_id, node_id, context_values, message)
 
