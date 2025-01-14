@@ -12,7 +12,7 @@ specific language governing permissions and limitations under the License.
 """
 
 
-from django.db import models, migrations
+from django.db import migrations
 
 
 class Migration(migrations.Migration):
@@ -22,5 +22,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.DeleteModel(name="ComponentModel",),
+        migrations.DeleteModel(
+            name="ComponentModel",
+        ),
     ]

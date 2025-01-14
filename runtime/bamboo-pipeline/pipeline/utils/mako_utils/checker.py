@@ -24,7 +24,9 @@ from .exceptions import ForbiddenMakoTemplateException
 
 
 def parse_template_nodes(
-    nodes: List[parsetree.Node], node_visitor: ast.NodeVisitor, code_extractor: MakoNodeCodeExtractor,
+    nodes: List[parsetree.Node],
+    node_visitor: ast.NodeVisitor,
+    code_extractor: MakoNodeCodeExtractor,
 ):
     """
     解析mako模板节点，逐个节点解析抽象语法树并检查安全性

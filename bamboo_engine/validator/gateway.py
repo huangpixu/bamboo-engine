@@ -14,6 +14,7 @@ specific language governing permissions and limitations under the License.
 import queue
 
 from bamboo_engine import exceptions
+
 from .utils import get_node_for_sequence, get_nodes_dict
 
 STREAM = "stream"

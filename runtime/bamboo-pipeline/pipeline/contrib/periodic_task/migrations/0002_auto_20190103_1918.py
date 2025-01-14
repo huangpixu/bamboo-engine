@@ -12,7 +12,7 @@ specific language governing permissions and limitations under the License.
 """
 
 
-from django.db import migrations, models
+from django.db import migrations
 
 
 class Migration(migrations.Migration):
@@ -24,6 +24,9 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterModelOptions(
             name="djceleryperiodictask",
-            options={"verbose_name": "djcelery periodic task", "verbose_name_plural": "djcelery periodic tasks",},
+            options={
+                "verbose_name": "djcelery periodic task",
+                "verbose_name_plural": "djcelery periodic tasks",
+            },
         ),
     ]
