@@ -52,7 +52,7 @@ tests-mypy = ["mypy (>=1.11.1)", "pytest-mypy-plugins"]
 
 [[package]]
 name = "bamboo-engine"
-version = "3.0.0.rc0"
+version = "3.0.0rc0"
 description = "Bamboo-engine is a general-purpose workflow engine"
 optional = false
 python-versions = "^3.11.10"

@@ -16,7 +16,7 @@ requests = "^2.31"
 django-celery-beat = "^2.5"
 Mako = "^1.3"
 pytz = ">=2019.3"
-bamboo-engine = "3.0.0rc0"
+bamboo-engine = {path = "../../../bamboo-engine" }
 jsonschema = "^4.17.0"
 ujson = "^5.9"
 pyparsing = "^3"
