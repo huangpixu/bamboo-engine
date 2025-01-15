@@ -55,20 +55,18 @@ name = "bamboo-engine"
 version = "3.0.0rc0"
 description = "Bamboo-engine is a general-purpose workflow engine"
 optional = false
-python-versions = "^3.11.10"
+python-versions = "<4.0.0,>=3.11.10"
 groups = ["main"]
-files = []
-develop = false
+files = [
+    {file = "bamboo_engine-3.0.0rc0-py3-none-any.whl", hash = "sha256:eb77652b844602d7f0cb1bb2fc107ad01376f9bad4a031b34d03e7c3eca8154e"},
+    {file = "bamboo_engine-3.0.0rc0.tar.gz", hash = "sha256:b9b13164d8fc09e1e48b10071f137cceec0714a094a0ea0ca9cc78049e1a703e"},
+]
 
 [package.dependencies]
-Mako = "^1.3"
-prometheus-client = "^0.20.0"
-pyparsing = "^3"
-Werkzeug = "^3"
-
-[package.source]
-type = "directory"
-url = "../.."
+Mako = ">=1.3,<2.0"
+prometheus-client = ">=0.20.0,<0.21.0"
+pyparsing = ">=3,<4"
+Werkzeug = ">=3,<4"
 
 [[package]]
 name = "billiard"
@@ -1439,4 +1437,4 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11.10"
-content-hash = "87be3531c3c6f12cf84646db292b197bbd9484400f326293ba87e9ce0c500e0b"
+content-hash = "fa2a6b237a6d0ee3eedbe8318a857097e01375d5f1a00ca3ff61447d0bef156f"
