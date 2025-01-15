@@ -145,9 +145,11 @@ class BambooDjangoRuntime(
                 {
                     "id": event["id"],
                     "type": event["type"],
-                    "targets": {event["outgoing"]: pipeline["flows"][event["outgoing"]]["target"]}
-                    if event["type"] == NodeType.EmptyStartEvent.value
-                    else {},
+                    "targets": (
+                        {event["outgoing"]: pipeline["flows"][event["outgoing"]]["target"]}
+                        if event["type"] == NodeType.EmptyStartEvent.value
+                        else {}
+                    ),
                     "root_pipeline_id": root_id,
                     "parent_pipeline_id": parent_id,
                     "can_skip": event["type"] == NodeType.EmptyStartEvent.value,

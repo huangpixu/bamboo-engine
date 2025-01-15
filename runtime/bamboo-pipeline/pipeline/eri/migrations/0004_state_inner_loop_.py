@@ -11,6 +11,8 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AddField(
-            model_name="state", name="inner_loop", field=models.IntegerField(default=1, verbose_name="子流程内部循环次数"),
+            model_name="state",
+            name="inner_loop",
+            field=models.IntegerField(default=1, verbose_name="子流程内部循环次数"),
         ),
     ]

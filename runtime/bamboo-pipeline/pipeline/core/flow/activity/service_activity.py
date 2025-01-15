@@ -14,7 +14,7 @@ specific language governing permissions and limitations under the License.
 from abc import ABCMeta, abstractmethod
 from copy import deepcopy
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from pipeline.conf import settings
 from pipeline.core.flow.activity.base import Activity
 from pipeline.core.flow.io import (
@@ -46,7 +46,9 @@ class Service(object, metaclass=ABCMeta):
             name=_("当前流程循环次数"),
             key="_inner_loop",
             type="int",
-            schema=IntItemSchema(description=_("在当前流程节点循环执行次数，由父流程重新进入时会重置（仅支持新版引擎）")),
+            schema=IntItemSchema(
+                description=_("在当前流程节点循环执行次数，由父流程重新进入时会重置（仅支持新版引擎）")
+            ),
         ),
     ]
 

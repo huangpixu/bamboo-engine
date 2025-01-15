@@ -16,13 +16,12 @@ import socket
 import mock
 from celery import current_app
 from django.test import TestCase
-from redis.exceptions import ConnectionError
-
 from pipeline.conf import settings
 from pipeline.django_signal_valve import valve
 from pipeline.engine.core import api, data
 from pipeline.engine.exceptions import RabbitMQConnectionError
 from pipeline.engine.models import FunctionSwitch
+from redis.exceptions import ConnectionError
 
 
 class EngineCoreApiTestCase(TestCase):
@@ -32,7 +31,8 @@ class EngineCoreApiTestCase(TestCase):
         FunctionSwitch.objects.freeze_engine.assert_called_once()
 
     @mock.patch(
-        "pipeline.engine.models.FunctionSwitch.objects.unfreeze_engine", mock.MagicMock(),
+        "pipeline.engine.models.FunctionSwitch.objects.unfreeze_engine",
+        mock.MagicMock(),
     )
     @mock.patch("pipeline.django_signal_valve.valve.open_valve", mock.MagicMock())
     def test_unfreeze(self):
@@ -106,7 +106,9 @@ class EngineCoreApiTestCase(TestCase):
                 worker = api.workers()
                 self.assertEqual(worker, two_workers())
                 data.expire_cache.assert_called_with(
-                    "__pipeline__workers__", two_workers(), settings.PIPELINE_WORKER_STATUS_CACHE_EXPIRES,
+                    "__pipeline__workers__",
+                    two_workers(),
+                    settings.PIPELINE_WORKER_STATUS_CACHE_EXPIRES,
                 )
 
             # raise exception
@@ -129,5 +131,7 @@ class EngineCoreApiTestCase(TestCase):
                 self.assertEqual(worker, two_workers())
                 ping_mock.assert_has_calls([mock.call(timeout=1), mock.call(timeout=2)])
                 data.expire_cache.assert_called_with(
-                    "__pipeline__workers__", two_workers(), settings.PIPELINE_WORKER_STATUS_CACHE_EXPIRES,
+                    "__pipeline__workers__",
+                    two_workers(),
+                    settings.PIPELINE_WORKER_STATUS_CACHE_EXPIRES,
                 )

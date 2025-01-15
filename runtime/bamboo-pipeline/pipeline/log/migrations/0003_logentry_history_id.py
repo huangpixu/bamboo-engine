@@ -22,5 +22,9 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AddField(model_name="logentry", name="history_id", field=models.IntegerField(default=-1),),
+        migrations.AddField(
+            model_name="logentry",
+            name="history_id",
+            field=models.IntegerField(default=-1),
+        ),
     ]

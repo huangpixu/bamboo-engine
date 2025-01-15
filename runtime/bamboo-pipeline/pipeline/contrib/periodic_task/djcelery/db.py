@@ -21,7 +21,6 @@ if django.VERSION < (1, 6):  # pragma: no cover
     def get_queryset(s):
         return s.get_query_set()
 
-
 else:
 
     def get_queryset(s):  # noqa

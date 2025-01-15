@@ -22,7 +22,10 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(model_name="templaterelationship", name="refer_sum",),
+        migrations.RemoveField(
+            model_name="templaterelationship",
+            name="refer_sum",
+        ),
         migrations.AddField(
             model_name="templaterelationship",
             name="subprocess_node_id",

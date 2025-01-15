@@ -12,7 +12,7 @@ specific language governing permissions and limitations under the License.
 """
 
 
-from django.db import migrations, models
+from django.db import migrations
 
 
 class Migration(migrations.Migration):
@@ -22,5 +22,9 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RenameField(model_name="componentexecutedata", old_name="tag_code", new_name="component_code",),
+        migrations.RenameField(
+            model_name="componentexecutedata",
+            old_name="tag_code",
+            new_name="component_code",
+        ),
     ]

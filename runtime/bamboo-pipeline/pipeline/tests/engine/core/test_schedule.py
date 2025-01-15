@@ -15,7 +15,6 @@ import itertools
 
 from django.test import TestCase
 from mock import call
-
 from pipeline.django_signal_valve import valve
 from pipeline.engine import signals
 from pipeline.engine.core import schedule
@@ -393,7 +392,8 @@ class ScheduleTestCase(TestCase):
                     with mock.patch(PIPELINE_STATUS_GET, mock.MagicMock(return_value=mock_status)):
 
                         with mock.patch(
-                            PIPELINE_PROCESS_GET, mock.MagicMock(return_value=process),
+                            PIPELINE_PROCESS_GET,
+                            mock.MagicMock(return_value=process),
                         ):
 
                             process_id = uniqid()
@@ -528,7 +528,8 @@ class ScheduleTestCase(TestCase):
                     with mock.patch(PIPELINE_STATUS_GET, mock.MagicMock(return_value=mock_status)):
 
                         with mock.patch(
-                            PIPELINE_PROCESS_GET, mock.MagicMock(return_value=process),
+                            PIPELINE_PROCESS_GET,
+                            mock.MagicMock(return_value=process),
                         ):
 
                             process_id = uniqid()
@@ -631,7 +632,8 @@ class ScheduleTestCase(TestCase):
                         with mock.patch(PIPELINE_STATUS_GET, mock.MagicMock(return_value=mock_status)):
 
                             with mock.patch(
-                                PIPELINE_PROCESS_GET, mock.MagicMock(return_value=process),
+                                PIPELINE_PROCESS_GET,
+                                mock.MagicMock(return_value=process),
                             ):
 
                                 schedule.schedule(process.id, mock_ss.id)

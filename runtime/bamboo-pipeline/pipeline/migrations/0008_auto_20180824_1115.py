@@ -23,8 +23,15 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RenameField(model_name="templateversion", old_name="snapshot_id", new_name="snapshot",),
-        migrations.RemoveField(model_name="templateversion", name="template_id",),
+        migrations.RenameField(
+            model_name="templateversion",
+            old_name="snapshot_id",
+            new_name="snapshot",
+        ),
+        migrations.RemoveField(
+            model_name="templateversion",
+            name="template_id",
+        ),
         migrations.AddField(
             model_name="templateversion",
             name="template",
