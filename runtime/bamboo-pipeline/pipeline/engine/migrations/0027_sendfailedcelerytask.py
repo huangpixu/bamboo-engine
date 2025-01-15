@@ -17,9 +17,7 @@ class Migration(migrations.Migration):
             fields=[
                 (
                     "id",
-                    models.BigAutoField(
-                        primary_key=True, serialize=False, verbose_name="ID"
-                    ),
+                    models.BigAutoField(primary_key=True, serialize=False, verbose_name="ID"),
                 ),
                 ("name", models.CharField(max_length=1024, verbose_name="任务名")),
                 ("kwargs", models.TextField(verbose_name="任务参数")),

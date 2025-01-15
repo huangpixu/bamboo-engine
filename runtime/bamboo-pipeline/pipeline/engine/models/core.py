@@ -11,11 +11,11 @@ an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express o
 specific language governing permissions and limitations under the License.
 """
 
-import ujson as json
 import contextlib
 import logging
 import traceback
 
+import ujson as json
 from celery import current_app
 
 try:
@@ -25,8 +25,7 @@ except ModuleNotFoundError:
 
 from django.db import models, transaction
 from django.utils import timezone
-from django.utils.translation import ugettext_lazy as _
-
+from django.utils.translation import gettext_lazy as _
 from pipeline.conf import settings as pipeline_settings
 from pipeline.constants import PIPELINE_DEFAULT_PRIORITY
 from pipeline.core.data.base import DataObject

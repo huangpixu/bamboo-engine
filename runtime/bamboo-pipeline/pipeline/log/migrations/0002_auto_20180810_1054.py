@@ -22,6 +22,14 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AlterField(model_name="logentry", name="exception", field=models.TextField(null=True),),
-        migrations.AlterField(model_name="logentry", name="message", field=models.TextField(null=True),),
+        migrations.AlterField(
+            model_name="logentry",
+            name="exception",
+            field=models.TextField(null=True),
+        ),
+        migrations.AlterField(
+            model_name="logentry",
+            name="message",
+            field=models.TextField(null=True),
+        ),
     ]

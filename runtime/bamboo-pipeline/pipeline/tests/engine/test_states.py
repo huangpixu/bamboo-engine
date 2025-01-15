@@ -14,7 +14,6 @@ specific language governing permissions and limitations under the License.
 import itertools
 
 from django.test import TestCase
-
 from pipeline.engine import states
 from pipeline.engine.states import *  # noqa
 
@@ -126,7 +125,7 @@ class StatesTestCase(TestCase):
                         )
 
     def test_is_rerunning(self):
-        for (f, t) in itertools.product(ALL_STATES, ALL_STATES):
+        for f, t in itertools.product(ALL_STATES, ALL_STATES):
             if f == FINISHED and t == RUNNING:
                 self.assertTrue(is_rerunning(f, t))
             else:

@@ -12,7 +12,7 @@ specific language governing permissions and limitations under the License.
 """
 
 
-from django.db import migrations, models
+from django.db import migrations
 
 
 class Migration(migrations.Migration):
@@ -22,8 +22,20 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(model_name="scheduleservice", name="celery_id",),
-        migrations.RemoveField(model_name="scheduleservice", name="celery_info_lock",),
-        migrations.RemoveField(model_name="scheduleservice", name="is_frozen",),
-        migrations.RemoveField(model_name="scheduleservice", name="schedule_date",),
+        migrations.RemoveField(
+            model_name="scheduleservice",
+            name="celery_id",
+        ),
+        migrations.RemoveField(
+            model_name="scheduleservice",
+            name="celery_info_lock",
+        ),
+        migrations.RemoveField(
+            model_name="scheduleservice",
+            name="is_frozen",
+        ),
+        migrations.RemoveField(
+            model_name="scheduleservice",
+            name="schedule_date",
+        ),
     ]
